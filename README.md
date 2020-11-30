@@ -32,21 +32,25 @@ Build a self-contained UI application in React to implement at the least:
 * Allows the user to create a clown entry
 * Displays a list of clowns
 
-How far you in in adding the other requested features, or creative features you want to do instead, is up to you. The government has tasked building the application to you, not us...
+What direction you take from there -- adding the other mayoral bucket-list features, or creative features you want to do instead -- is your decisions. The government has tasked building the application to you, not us...
 
-You must:
+However, you must:
 
 * Use git as your version control system
 * Provide a README with instructions to how to run the application
 * End up in a state where the application opens in a browser
-* Choose at least one external package/dependency and build it into the application. You must call out in the README your thought process behind why this library was chosen, and any considerations you gave (or would have given had you more time)
+* Choose at least one external package/dependency and build it into the application. You must call out in the README your thought process behind why this library was chosen, and any considerations you gave (or would have given had you more time). You must be able to defend your decision about why you chose this library.
 
 We prefer, but you are not required to:
 
 * Use Typescript
 * Organized, best practice commits
+* Modern React APIs (aka Hooks). If you are more familiar with the older APIs that is no issue -- so long as you are using them correctly
+* Describe your architecture in the README
 
-**Spend time on the things that you find enjoyable**. If you build out a basic UI and want to spend time on testing instead of new features, go ahead. If you want to build a bunch of partially implemented features that don't cover edge cases instead of doubling down on refactor, go head. The choices you make help let us learn more about you, and hopefully make this exercise as least painful as possible.
+**Spend time on the things that you find enjoyable**. If you build out a basic UI and want to spend time on testing instead of new features, go ahead. If you want to build a bunch of partially implemented features that don't cover edge cases instead of doubling down on refactor, go head. Want to implement persistence in Local Storage or a mocked out JSON server? Be our guest.
+
+The choices you make help let us learn more about you, and hopefully make this exercise as least painful as possible.
 
 ### Where To Start
 
@@ -58,7 +62,7 @@ A good starting invocation for that might be:
 npx create-react-app my-app --template typescript
 ```
 
-See the [CRACO Getting Started Guide](https://create-react-app.dev/docs/getting-started) if you want to just use plain Javascript (acceptable, but not ideal) or use `npm` as your package manager.
+See the [Creact React App Getting Started Guide](https://create-react-app.dev/docs/getting-started) if you want to just use plain Javascript (acceptable, but not ideal) or use `npm` as your package manager.
 
 ### How You Might Spend Your Time
 
@@ -72,6 +76,7 @@ See the [CRACO Getting Started Guide](https://create-react-app.dev/docs/getting-
 
 * Clarity and organization of code
 * Separation of concerns -- e.g. display logic vs state/business logic
+* Idiomatic React usage
 * Inline documentation
 * Personal flair
 
@@ -79,7 +84,7 @@ See the [CRACO Getting Started Guide](https://create-react-app.dev/docs/getting-
 
 * The application to implement all of the features requested by us... erm, cough... the local government
 * Perfection
-* For you to boil the ocean -- get a working version of the application, iterate from there, and bear in mind what you _would_ have liked to improve given more time
+* For you to boil the ocean -- get a working version of the application, iterate from there, and call out what you _would_ have liked to improve or work on next given more time. The README is your journal...
 
 ## Legalese...
 
