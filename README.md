@@ -8,7 +8,7 @@ Welcome to the o8t React technical assessment! If you've made it this far, it me
 
 The goal of this project is to assess your level of comfort with the Javascript frontend ecosystem and knowledge of software engineering best practices. This will help us understand where you stand in your professional development, giving us more information to determine if you are a good fit for our open role. This is good for both of us -- we wouldn't want you to be frustrated and unhappy if we place you in a role you are not prepared to crush. But we want to try to make this fun as well, so let's strap in!
 
-We want to keep this short, so this will be a time-bound exercise on the honor system. We ask that you spend no more than **2 hours** in the execution of this assessment. We don't expect you to finish -- and whether you choose to emphasize breadth or depth is up to you -- so long as you implement the minimum set of features described below.
+We want to keep this short, so this will be a time-bound exercise on the honor system. We ask that you spend no more than **3 hours** in the execution of this assessment. We don't expect you to finish -- and whether you choose to emphasize breadth or depth is up to you -- so long as you implement the minimum set of features described below.
 
 ## The Assessment
 
@@ -46,15 +46,25 @@ We prefer, but you are not required to:
 * Use Typescript
 * Organized, best practice commits
 
+**Spend time on the things that you find enjoyable**. If you build out a basic UI and want to spend time on testing instead of new features, go ahead. If you want to build a bunch of partially implemented features that don't cover edge cases instead of doubling down on refactor, go head. The choices you make help let us learn more about you, and hopefully make this exercise as least painful as possible.
+
 ### Where To Start
 
-You are welcome to use whatever scaffolding you prefer to get up and running quickly (e.g. from a personal cookie cutter, framework you are familiar with) -- but we highly recommend that you use the [Create React App](https://create-react-app.dev/) framework. 
+You are welcome to use whatever scaffolding you prefer to get up and running quickly (e.g. from a personal cookie cutter, framework you are familiar with) -- but we highly recommend that you use the [Create React App](https://create-react-app.dev/) framework.
 
-A good starting invocation for that would be:
+A good starting invocation for that might be:
 
 ```bash
 npx create-react-app my-app --template typescript
 ```
+
+See the [CRACO Getting Started Guide](https://create-react-app.dev/docs/getting-started) if you want to just use plain Javascript (acceptable, but not ideal) or use `npm` as your package manager.
+
+### How You Might Spend Your Time
+
+* ~2 hour on basic development
+* 30 minutes on code clean up + refactor, inline-code documentation
+* 30 minutes on docs -- how to run, what you would have added next, call out a cool easter egg you added, justification for choice of external dependency 
 
 ## Assessment Rubric
 
