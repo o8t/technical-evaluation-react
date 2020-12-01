@@ -19,7 +19,9 @@ The sleepy town of Appleville has seen a massive influx of clowns of late. While
 ![Good Clowns](https://live.staticflickr.com/1144/748033123_fc7978316b_b.jpg)
 ![Bad Clowns](https://live.staticflickr.com/65535/3998720576_59601eb22a.jpg)
 
-As a response to the clown influx, the local government has started to create a clown-tracking application. They have tasked you with building a UI where clowns can register themselves, provide some basic profile information, and upload a profile picture. They then want to build upon this basic version of the application to try to organize the clown's by posse, search by clown attributes, remove clowns from the database as they retire and... other clown-related things the Mayor dreams up.
+As a response to the clown influx, the local government has started to create a clown-tracking application. They have tasked you with building a UI where clowns can register themselves, provide some basic profile information, and upload a profile picture. Thats the bare minimum.
+
+In future iterations they want to build upon this basic version of the application to try to organize the clown's by posse, search by clown attributes, remove clowns from the database as they retire and... other clown-related things the Mayor dreams up. These are avenues you might choose to take up, or go your own way and add some other novel features.
 
 Remember, the happiness of the town's children depends on you!
 
@@ -32,7 +34,7 @@ Build a self-contained UI application in React to implement at the least:
 * Allows the user to create a clown entry
 * Displays a list of clowns
 
-What direction you take from there -- adding the other mayoral bucket-list features, or creative features you want to do instead -- is your decisions. The government has tasked building the application to you, not us...
+What direction you take from there -- adding the other mayoral bucket-list features, or creative features you want to do instead -- is your decision. The government has tasked building the application to you, not us...
 
 However, you must:
 
@@ -48,7 +50,7 @@ We prefer, but you are not required to:
 * Modern React APIs (aka Hooks). If you are more familiar with the older APIs that is no issue -- so long as you are using them correctly
 * Describe your architecture in the README
 
-**Spend time on the things that you find enjoyable**. If you build out a basic UI and want to spend time on testing instead of new features, go ahead. If you want to build a bunch of partially implemented features that don't cover edge cases instead of doubling down on refactor, go head. Want to implement persistence in Local Storage or a mocked out JSON server? Be our guest.
+**Spend time on the things that you find enjoyable**. If you build out a basic UI and want to spend time additional time on testing instead of new features, go ahead. If you want to build a bunch of partially implemented features that don't cover edge cases instead of doubling down on refactor, go head. Want to implement persistence in Local Storage or a mocked out JSON server? Be our guest.
 
 The choices you make help let us learn more about you, and hopefully make this exercise as least painful as possible.
 
