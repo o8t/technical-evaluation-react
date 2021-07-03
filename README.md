@@ -1,6 +1,6 @@
-# [Clown Portal][![version][version-badge]][CHANGELOG]
+# Clown Portal
 
-**[Clown Portal]**
+## Summary
 
 Add and delete clowns, allowing entry of some personal details.
 LocalStorage is used for data persistence.
@@ -11,11 +11,11 @@ As a starter, I used this free template. (https://demos.creative-tim.com/materia
 
 * [Demo](#demo)
 * [Quick Start](#quick-start)
-* [Terminal Commands](#documentation)
-
 
 ## Demo
 
+A demo is running in a AWS t2 medium instance here:
+http://52.201.248.84
 
 ## Quick start
 
