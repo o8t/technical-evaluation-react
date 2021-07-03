@@ -47,6 +47,9 @@ export class ListDatafilesComponent implements OnInit{
       if (!isValid) {
         this.message = "Please enter valid email.";
       }
+      this.sleep(2000).then(() => {
+        this.message = "";
+      });
     }
 
     // add clown
