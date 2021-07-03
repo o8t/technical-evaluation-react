@@ -15,12 +15,16 @@ As a starter, I used this free template. (https://demos.creative-tim.com/materia
 ## Demo
 
 A demo is running in a AWS t2 medium instance here:
-http://52.201.248.84
+http://http://52.201.248.84/
 
 ## Quick start
 
 Quick start options:
 
 - [Download from Github](git remote add origin https://github.com/barefoothiker/clownPortalFrontEnd.git).
-- [Build using docker]( docker build -t "build_d"  .).
-- [Run using docker] (docker run -v ${PWD}:/app -v /app/node_modules -p 4200:4200 --rm build_d)
+# Run using node/npm
+- Install node and npm using nvm (nvm install 14). To install nvm
+https://github.com/nvm-sh/nvm
+# Run using docker
+- [Build using docker]( docker build -t "build_d:dev"  .).
+- [Run using docker] (docker run -v ${PWD}:/app -v /app/node_modules -p 4200:4200 --rm build_d:dev)
