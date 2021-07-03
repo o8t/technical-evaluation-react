@@ -25,6 +25,10 @@ Quick start options:
 # Run using node/npm
 - Install node and npm using nvm (nvm install 14). To install nvm
 https://github.com/nvm-sh/nvm
+- Run the following
+nvm install 14
+npm install
+npm start
 # Run using docker
 - [Build using docker]( docker build -t "build_d:dev"  .).
 - [Run using docker] (docker run -v ${PWD}:/app -v /app/node_modules -p 4200:4200 --rm build_d:dev)
