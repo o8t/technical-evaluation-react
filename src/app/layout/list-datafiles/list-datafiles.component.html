@@ -1,0 +1,64 @@
+<div class="container" >
+<br/>
+<br/>
+<div class="col-lg-12">
+	<div class="row" style="float:clear;">
+			<div class="mt-2 col-md-12 ">
+					<b>Name:</b>
+					<input type="text" class="col-sm-5 form-control form-control-sm" [(ngModel)]="datafile.name" [ngModelOptions]="{standalone: true}" required>
+			</div>
+			<div class="mt-2 col-md-12 ">
+				<b>Email:</b>
+				<input type="email"  [(ngModel)]="datafile.email" [ngModelOptions]="{standalone: true}"  class="form-control input-underline input-lg" id="email" (keyup)="checkEmail()" placeholder="a@xyz.com" required>
+			</div>
+			<div class="mt-2 col-md-12">
+				<b>Craziness Level:</b>
+				<ng5-slider [(value)]="crazinessLevel" [options]="crazinessLevelliderOptions" (valueChange)="sliderValueChange($event)"> </ng5-slider>
+			</div>
+			<div class="mt-2 col-md-12 ">
+			<b>Upload Image File:</b>
+			<form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">
+	      <div>
+	        <input type="file" name="profileImage" (change)="onFileSelect($event)" />
+	      </div>
+	    </form>
+			<div class="btn-group">
+				<button  id="button_0" style = "background-color:#834793;" (click)="addClown();" >Add Clown&nbsp;
+				</button>&nbsp;
+			</div>
+			<div class="alert alert-success" role="alert" *ngIf="message">
+				{{message}}
+			</div>			
+		</div>
+    <div *ngIf="datafiles?.length > 0">
+			<div class="mt-2 col-md-12 ">
+				<label class="col-form-label;">List of clowns</label>
+			</div>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+						<th><b>Name</b></th>
+						<th><b>Email</b></th>
+						<th><b>Craziness Level</b></th>
+			      <th><b>Image</b></th>
+					</tr>
+        </thead>
+        <tbody>
+					<tr *ngFor="let datafile of datafiles">
+            <td>
+								{{datafile.name}}
+						</td>
+			      <td>
+								{{ datafile.email}}
+						</td>
+						<td>
+								{{ datafile.crazinessLevel}}
+						</td>
+			      <td>
+								<img [src]="datafile.profileImage" style="width:100px;height:100px;">
+						</td>
+			    </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

@@ -1,0 +1,212 @@
+				<div class="container">
+        <br/>
+        <br/>
+        <br/>
+				<div  *ngIf="!datafiles" style="max-width: 250px;float:left;font-size:24px;font-weight:bold;">
+					Loading ..
+				</div>
+						<div *ngIf="datafiles" class="row" style="float:clear;">
+
+								<div class="col-sm-12">
+										<div>
+											Search Files:&nbsp;
+											<input [(ngModel)]="searchDataFilesString" id="searchDataFilesString" [ngModelOptions]="{standalone: true}">
+											&nbsp;
+											Filter Records:&nbsp;
+											<select
+												class="form-control-sm"
+												name="mode"
+												[(ngModel)]="filterFilesOption" (change) = "filterDataFiles();">
+												<option value=""></option>
+												<option value="{{filterOption.name}}" *ngFor="let filterOption of filterOptions" >{{filterOption.name}}</option>
+											</select>
+										</div>
+										<br/>
+
+										<div class="form-group" >
+											<div style="width:120px;height:60px;border:1px solid #000;background-color:#EDF59A;text-align:center;font-size:18px;float:left;">Uploaded</div>
+											<div style="width:10px;height:60px;border:0px;float:left;"></div>
+											<div style="width:120px;height:60px;border:1px solid #000;background-color:#CBF022;text-align:center;font-size:18px;float:left;">Analysis Submitted</div>
+											<div style="width:10px;height:60px;border:0px;float:left;"></div>
+											<div style="width:120px;height:60px;border:1px solid #000;background-color:#32FFC8;text-align:center;font-size:18px;float:left;">Score Calculated</div>
+											<div style="width:10px;height:60px;border:0px;float:left;"></div>
+											<div style="width:120px;height:60px;border:1px solid #000;background-color:#36CBEC;text-align:center;font-size:18px;float:left;">Analysis Completed</div>
+										</div>&nbsp;&nbsp;
+
+										<br/>
+										<br/>0
+
+										<div *ngIf="datafiles?.length > 0">
+
+											<!-- <table class="table table-bordered table-striped table-sm">
+										    <tr>
+										      <th>Name</th>
+										      <th>Chksum</th>
+										      <th>Status</th>
+										      <th>View Results</th>
+													<th>Report</th>
+													<th>Delete</th>
+												</tr>
+										    <tr *ngFor="let datafile of datafiles | listFilesFilter : searchDataFilesString"  id="{{datafile.name}}" [style.background-color]="datafile.rowColor">
+
+						              <td>
+															 <a [routerLink]="['/datafile-detail',datafile.id]" >
+															{{datafile.name}}
+															 </a>
+													</td>
+
+										      <td>{{ datafile.chksum}}</td>
+										      <td>
+														{{ datafile.status }}
+													</td>
+										      <td>
+														<div *ngIf = "datafile.resultsAvailable == 'yes'">
+															<a [routerLink]="['/analysis-detail',datafile.id]" >
+																View Results
+															</a>
+															<br/>
+														</div>
+														<div *ngIf = "datafile.resultsAvailable == 'no'">
+															<div *ngIf = "datafile.status == 'Analysis Submitted'">
+																Processing ..
+															</div>
+															<div *ngIf = "datafile.status == 'Uploaded'">
+																Uploaded
+															</div>
+														</div>
+													</td>
+													<td>
+														<div *ngIf = "datafile.resultsAvailable == 'yes'">
+															<a [routerLink]="['/report',datafile.id]" >
+																Report
+															</a>
+														</div>
+														<div *ngIf = "datafile.resultsAvailable == 'no'">
+															<div *ngIf = "datafile.status == 'Analysis Submitted'">
+																Processing ..
+															</div>
+															<div *ngIf = "datafile.status == 'Uploaded'">
+																Uploaded
+															</div>
+														</div>
+													</td>
+						              <td>
+														<button  id="delete_button_{{datafile.id}}" (click)="deleteDatafile($event);" class="btn btn-danger">Delete</button>&nbsp;
+													</td>
+										    </tr>
+										  </table>
+ -->
+
+											<div class="alert alert-success" role="alert" *ngIf="message">
+					              {{message}}
+					            </div>
+										</div>
+
+										<div class="row" style="float:clear;overflow: scroll;height:400px;">
+				                <div *ngIf="datafiles?.length > 0">
+				                    <table class="table table-bordered table-striped">
+
+				                      <thead>
+				                        <tr>
+
+																	<th>Name</th>
+														      <th>Chksum</th>
+														      <th>Status</th>
+														      <th>View Results</th>
+																	<th>Report</th>
+																	<th>Delete</th>
+
+																</tr>
+
+				                      </thead>
+
+				                      <!-- <tbody>
+				                        <tr>
+				                          <td></td>
+				                          <td *ngFor = "let columnFilter of structureChainResultObj.columnFilterList" width="50px">
+
+				                            <div class="row">
+				                              <div class="col">
+				                                <div ngbDropdown class="d-inline-block">
+				                                  <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{columnFilter.selectedValue}}</button>
+				                                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+				                                    <button ngbDropdownItem *ngFor="let columnFilterValue of columnFilter.columnFilterValues" (click) = "filterStructureTable(columnFilter.columnName, columnFilterValue)" [value]="columnFilterValue" [style.background-color] = "columnFilter.rowColor" >{{ columnFilterValue }}</button>
+				                                  </div>
+				                                </div>
+				                              </div>
+				                            </div>
+				                          </td>
+				                        </tr>
+				                      </tbody> -->
+				                      <tbody>
+
+																<tr *ngFor="let datafile of datafiles | listFilesFilter : searchDataFilesString"  id="{{datafile.name}}" [style.background-color]="datafile.rowColor">
+
+										              <td>
+																			 <a [routerLink]="['/datafile-detail',datafile.id]" >
+																			{{datafile.name}}
+																			 </a>
+																	</td>
+
+														      <td>{{ datafile.chksum}}</td>
+														      <td>
+																		{{ datafile.status }}
+																	</td>
+														      <td>
+																		<div *ngIf = "datafile.resultsAvailable == 'yes'">
+																			<a [routerLink]="['/analysis-detail',datafile.id]" >
+																				View Results
+																			</a>
+																			<br/>
+																		</div>
+																		<div *ngIf = "datafile.resultsAvailable == 'no'">
+																			<div *ngIf = "datafile.status == 'Analysis Submitted'">
+																				Processing ..
+																			</div>
+																			<div *ngIf = "datafile.status == 'Uploaded'">
+																				Uploaded
+																			</div>
+																		</div>
+																	</td>
+																	<td>
+																		<div *ngIf = "datafile.resultsAvailable == 'yes'">
+																			<a [routerLink]="['/report',datafile.id]" >
+																				Report
+																			</a>
+																		</div>
+																		<div *ngIf = "datafile.resultsAvailable == 'no'">
+																			<div *ngIf = "datafile.status == 'Analysis Submitted'">
+																				Processing ..
+																			</div>
+																			<div *ngIf = "datafile.status == 'Uploaded'">
+																				Uploaded
+																			</div>
+																		</div>
+																	</td>
+										              <td>
+																		<button  id="delete_button_{{datafile.id}}" (click)="deleteDatafile($event);" class="btn btn-danger">Delete</button>&nbsp;
+																	</td>
+														    </tr>
+
+				                      </tbody>
+				                    </table>
+				                    <div class="btn-group" *ngIf="displayStructureChainObjList?.length > 0" >
+				                      <button  id="button_prev" [style.background-color] = "structurePrevButtonColor" style = "background-color:#834793;" (click)="showStructurePrev();" [disabled]="hideStructurePrevButton">Prev&nbsp;
+				                			</button>&nbsp;
+				                      <button  id="button_next" [style.background-color] = "structureNextButtonColor" (click)="showStructureNext();" [disabled]="hideStructureNextButton">Next&nbsp;
+				                  		</button>
+				                    </div>
+				                </div>
+				              </div>
+
+
+										<div *ngIf="datafiles?.length == 0">
+											<b>No files to display.</b>
+										</div>
+
+
+						</div>
+					</div>
+
+				</div>
+			<!-- </div> -->
