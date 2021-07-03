@@ -15,7 +15,7 @@ RUN npm install
 # Generate the build of the application
 RUN npm run build
 
-# CMD ng serve --host 0.0.0.0
+# CMD ng serve
 
 # Stage 2: Serve app with nginx server
 
