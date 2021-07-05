@@ -1,0 +1,26 @@
+.custom-card{
+  background: white;
+  border-radius: 10px;
+  max-width: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-bottom: 8%;
+}
+.main-title{
+  max-width: 50%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 3%;
+  font-weight: 800;
+}
+@media screen and (max-width: 768px) {
+ .custom-card{
+   max-width: 93%;
+   form{
+     width: 100% !important;
+   }
+ }
+}
