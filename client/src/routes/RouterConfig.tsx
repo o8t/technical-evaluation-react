@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Clown } from '../pages';
-import * as routes from './constants';
+import { ListClowns, ClownDetails } from '../pages';
 
 export function RouterConfig() {
     return (
         <div>
             <Switch>
-                <Route exact path={routes.ROOT} component={Home} />
-                <Route exact path={routes.CLOWNS} component={Clown} />
+                <Route exact path={'/'} component={ListClowns} />
+                <Route path={'/clown/:id'} component={ClownDetails} />
+                <Route exact path={'/clown/'} component={ClownDetails} />
             </Switch>
         </div>
     );

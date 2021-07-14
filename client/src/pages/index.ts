@@ -1,3 +1,2 @@
-export * from './Home';
-export * from './Clowns';
-export * from './Clown';
+export * from './ListClowns';
+export * from './ClownDetails';
