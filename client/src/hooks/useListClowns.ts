@@ -3,6 +3,10 @@ import { Clown } from '../types';
 import { getAsync } from '../utils';
 import { apiRoutes } from './api';
 
+/**
+ * Fetch a list of clowns from the server
+ * @returns a list of clowns
+ */
 export function useListClowns() {
     const [clowns, setClowns] = useState<Clown[]>([]);
 

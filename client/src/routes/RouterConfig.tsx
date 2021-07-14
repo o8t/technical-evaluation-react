@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { ListClowns, ClownDetails } from '../pages';
 
+// TODO: extract the routes to constants
+
 export function RouterConfig() {
     return (
         <div>

@@ -1,7 +1,7 @@
 import { Clown } from '../types';
 
-// In-memory store
-// TODO: replace with persistence db
+// This is an in-memory store of clowns
+// TODO: It should be replaced with persistence db
 export const clowns: Clown[] = [
     { id: 1, name: 'joker', description: 'Batman\'s enemy' }
 ];

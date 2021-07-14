@@ -3,6 +3,9 @@ import { Redirect, useParams } from 'react-router-dom';
 import { useClownDetail  } from '../hooks';
 import { Clown } from '../types';
 
+/**
+ * Edit and submit the details of the clown.
+ */
 export function ClownDetails() {
     const params: any = useParams();
     const { clown, updateClown } = useClownDetail(Number(params.id));
@@ -26,7 +29,8 @@ export function ClownDetails() {
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         updateClown(state);
         event.preventDefault();
-        return <Redirect to="/clowns/" />
+        // TODO: extract the routes to constants
+        return <Redirect to="/clowns/" />;
     }
 
     return (

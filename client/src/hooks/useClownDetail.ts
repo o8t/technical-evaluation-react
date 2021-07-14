@@ -3,6 +3,10 @@ import { Clown } from '../types';
 import { getAsync, postAsync } from '../utils';
 import { apiRoutes } from './api';
 
+/**
+ * Fetch and update the clown detail at the server.
+ * @param id the clown's id
+ */
 export function useClownDetail(id: number) {
     const [clown, setClown] = useState<Clown | undefined>(undefined);
 
@@ -18,6 +22,10 @@ export function useClownDetail(id: number) {
             fetchAsync();
     }, [id])
 
+    /**
+     * Submit the changes to the server
+     * @param clown 
+     */
     async function updateClown(clown: Clown) {
         await postAsync(apiRoutes.addOrUpdateClown, clown);
     }
