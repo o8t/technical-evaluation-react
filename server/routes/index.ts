@@ -3,7 +3,7 @@ import HttpStatus from 'http-status-codes';
 import env from '../environment';
 
 // Routes
-import list from './list';
+import list from './clowns';
 import healthcheck from './healthcheck';
 
 // configure commonly used server routes
