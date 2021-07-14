@@ -1,12 +1,12 @@
 import path from 'path';
 import express from 'express';
-// import HttpStatus from 'http-status-codes';
+import routes from './routes';
+import env from './environment';
 
-const PORT = 8000;
 const app = express();
-
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('/', (req,res) => res.send('Gotham Server'));
-app.listen(PORT, () => {
-  console.log(`[server]: Server is running at https://localhost:${PORT}`);
+app.use(routes);
+
+app.listen(env.PORT, () => {
+  console.log(`[server]: Server is running at https://localhost:${env.PORT}`);
 });
