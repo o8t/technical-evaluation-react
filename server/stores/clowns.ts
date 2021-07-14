@@ -3,5 +3,12 @@ import { Clown } from '../types';
 // In-memory store
 // TODO: replace with persistence db
 export const clowns: Clown[] = [
-    { id: 'joker', alias: 'Joker', name: 'unknown', description: 'Bathman\'s enemy', isCrazy: true, skills: [ 'Black-ops', 'master of disguise', 'has no fear']}
+    { id: 1, name: 'joker', description: 'Batman\'s enemy' }
 ];
+
+var lastId: number = clowns.length;
+
+export function getNextId() {
+    lastId++;
+    return lastId;
+}

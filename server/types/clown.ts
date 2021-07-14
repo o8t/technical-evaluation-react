@@ -1,9 +1,6 @@
 // TODO: Share this definition with client
 export interface Clown {
-    id: string;
-    alias: string;
+    id: number;
     name: string;
     description: string;
-    isCrazy: boolean;
-    skills: string[];
 }
