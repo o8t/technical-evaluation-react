@@ -1,4 +1,13 @@
-# clowntown
+#Welcome to the Appleville Clown Incident Tracking Dashboard!
+
+## Create New Clown Color
+```
+Go to the included .blend file (located in /src/blends) & simply change the material colors to whatever you desire, then render! 
+
+(from this point it'd be rather trivial to make a python script that automatically generates a clown png with the colors you enter, but I've already strayed off topic enough for now so consider that in the "future updates" category).
+
+Another future update could be to integrate webgl/webgpu into the project so that the clowns can be automatically displayed & live-customized. Could even do it so that you can add custom attributes per clown model instead of simple color changing
+```
 
 ## Project setup
 ```
@@ -15,10 +24,8 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
+### Run Built Files
 ```
-npm run lint
+install a webserver (npm install -g serve works), point it at ./dist (serve -s dist will work)
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
