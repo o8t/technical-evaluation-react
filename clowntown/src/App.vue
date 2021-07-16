@@ -1,26 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <div id="header">
+     <img id="logo" src="./assets/imgs/appleville.svg"/><br>
+     <span id="subhead">CLOWN INCIDENT TRACKER</span>
+  </div>
+   <clown-map/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import clownMap from './components/clownMap.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    clownMap,
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+#logo{
+  width:25%;
 }
+#subhead{
+  font-weight:bold;
+  font-size:35px;
+}
+
 </style>
