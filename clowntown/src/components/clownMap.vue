@@ -2,13 +2,14 @@
     <l-tile-layer :url="require('@/assets/imgs/tile.jpeg')" :tileSize="512" ></l-tile-layer>
     <l-control-attribution prefix="© Appleville Geographical Society"></l-control-attribution>
     <l-marker v-for="c in clowns" :key="c._id"   v-model:lat-lng="c.homeAddress">
+    <l-popup><b>"{{c.stageName}}"</b><br> ({{c.realName}}) </l-popup><!--can add whatever attributes we want available on the map here, can modify map popup to be whatever format & style we want-->
     </l-marker>
   </l-map>
 </template>
   <script>
 
 import "leaflet/dist/leaflet.css"
-import { LMap, LTileLayer, LMarker} from "@vue-leaflet/vue-leaflet";
+import { LMap, LTileLayer, LMarker, LPopup} from "@vue-leaflet/vue-leaflet";
 
   export default {
    name: "clownMap",
@@ -16,6 +17,7 @@ import { LMap, LTileLayer, LMarker} from "@vue-leaflet/vue-leaflet";
    components: {
     LMap,
     LMarker,
-    LTileLayer},
+    LTileLayer,
+    LPopup},
                     }
   </script>
