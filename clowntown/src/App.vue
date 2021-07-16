@@ -4,7 +4,7 @@
      <img id="logo" src="./assets/imgs/appleville.svg"/><br>
      <span id="subhead">CLOWN INCIDENT TRACKER</span>
   </div>
-   <clown-map/>
+   <clown-map :clowns="clowns"/>
 </template>
 
 <script>
@@ -15,7 +15,12 @@ export default {
   name: 'App',
   components: {
     clownMap,
-  }
+  },
+  data(){
+    return{
+      clowns: this.$store.state.clowns,
+    }
+  },
 }
 </script>
 
