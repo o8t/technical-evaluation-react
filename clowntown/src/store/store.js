@@ -17,9 +17,7 @@ const store = createStore({
 
     mutations: {
     addClown (state,clown) {
-        console.log(state.clowns.length);
       state.clowns.push(clown);
-        console.log(state.clowns.length);   
             },
     removeClown (state,clown) {
             for(var c=0;c<state.clowns.length;c++){

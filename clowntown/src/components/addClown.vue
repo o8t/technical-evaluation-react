@@ -1,7 +1,7 @@
 <template>
 <div id="formdiv">
 
-<input type='file' name="image" accept="image/*"/><br>
+<input type='file' :onchange='addImage' name="image" accept="image/*"/><br>
 
 Stage Name:<input v-model="form.stageName"/><br>
 Real Name:<input v-model="form.realName"/><br>
@@ -34,7 +34,8 @@ components: {
         
         this.$store.commit('addClown',this.form)},
 
-        async testfn(val){ 
+        //addImage takes the image data from upload field & translates it into base64 for in-browser serialization w/o having to technically upload the file. For future implementations this can be replaced with something like Axios for uploading to backend.
+        async addImage(val){ 
         return new Promise((resolve, reject) => {
 
             var files = val.target.files;

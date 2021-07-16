@@ -10,4 +10,4 @@ x add 3d renders to map
 x be able to add new clown
 x clean up formatting/styling
 x add more documentation
-add photo to clown
+x add photo to clown

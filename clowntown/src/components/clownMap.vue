@@ -24,11 +24,12 @@ import { LMap, LTileLayer, LIcon, LMarker, LPopup, LControlAttribution} from "@v
     LTileLayer,
     LPopup},
     computed: {
-      iconurls: function(){
+      //iconurls gets a list w same magnitude as clowns list & maps the uris for the clown icons into the corresponding 3d image map marker files. Changing n will allow you to add more images into the rotation as long as they keep the same naming conventions
+      iconurls: function(state,n=3){
         var icons = [];
         for(var c=0; c<this.$store.state.clowns.length;c++){
           icons.push(
-            require('@/assets/imgs/clown'+(c%3+1)+'.png'))
+            require('@/assets/imgs/clown'+(c%n+1)+'.png'))
         }
         return icons;
       }

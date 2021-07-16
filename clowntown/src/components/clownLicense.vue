@@ -3,7 +3,7 @@
     <div class="lic-head"> 🤡CLOWNING LICENSE🤡 </div>
     <div class="lic-id"> Clown License ID #: 1234567890 </div>
     <div class="lic-exp"> Clown License Exp: Never </div>
-    <div class="lic-avi"> Profile Img <img v-if="clown.avatar!=''" style="width:100px; height:100px;" :src="clown.avatar"/></div>
+    <div class="lic-avi"> Profile Img <img v-if="clown.avatar!=''" class="lic-avi-pic" :src="clown.avatar"/></div>
     <div class="lic-pname"> Performance Name: {{clown.stageName}}</div>
     <div class="lic-rname"> Real Name: {{clown.realName}}</div>
     <div class="lic-bio"> Bio: {{clown.biography}}</div>
@@ -44,5 +44,11 @@ export default {
     .lic-head{
     font-size: 20px;
     font-weight: bold;
+    }
+
+    .lic-avi-pic{
+    border: 5px solid black;
+    width:100px; 
+    height:100px;
     }
 </style>

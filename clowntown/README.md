@@ -13,7 +13,7 @@ Another future update could be to integrate webgl/webgpu into the project so tha
 
 ## Map
 ```
-Map: Click on a clown & you'll receive more info about the clown, including their names (both stage name & real name), license details, biographies, and other details. This is private personal clownformation regulated by strict clownfidentiality law, please dont spread it around.
+Click on a clown & you'll receive more info about the clown, including their names (both stage name & real name), license details, biographies, and other details. This is private clownformation regulated by strict clownfidentiality law, please dont spread it around.
 ```
 
 ## Packages:
@@ -36,6 +36,8 @@ Map: Click on a clown & you'll receive more info about the clown, including thei
 	
 	super duper sleek UI design, I'm mostly a backend person who tries to get the front end a couple steps less ugly than purely functional, but not too many steps
 
+	no form checking, play gentle :)
+
 	not optimized for mobile
 ```
 
@@ -44,6 +46,9 @@ Map: Click on a clown & you'll receive more info about the clown, including thei
 	the clown images outline renders funky on the hair, clips behind head
 
 	size is much different in appleville, while you may think you're zooming in the world may be zooming out. how do you think so many clowns can fit in one car? (translation: would need to create a set of different sized tiles to fix zooming problem, and that just seems like superfluous effort)
+
+
+	uploading two clowns with profile pics will rewrite all pics to the latest uploaded one. There's probably a way to fix this without needing backend file saving, but I wanted to keep this app solely frontend (ie no distinct node servers need to be running, can just load as file) so the images are just saved as base64 strings
 ```
 
 ##Future:
@@ -57,6 +62,10 @@ Map: Click on a clown & you'll receive more info about the clown, including thei
 	make licenses look more like licenses & define grid location for attributes
 
 	connect licenses in list to licenses on map (ie clicking on map highlights the license of that clown & scrolls down to it)
+	
+	AddNewClown fields show thru popup animation
+
+	use clown's personal uploaded image on map, 3d clowns only when none provided (also match 3d clown w hair color instead of modulating by index?)
 ```
 ### INSTALLATION/RUNNING
 
@@ -77,7 +86,9 @@ npm run build
 
 ### Run Built Files
 ```
-install a webserver (npm install -g serve works), point it at ./dist (serve -s dist will work)
+install a webserver (npm install -g serve works), point it at ./dist (serve -s dist will work) (or just set up an nginx server)
+
+technically, since this app is 100% self-contained, you dont actually need to keep the webserver running after its done correctly pointing to all the static files!
 ```
 
 
