@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}

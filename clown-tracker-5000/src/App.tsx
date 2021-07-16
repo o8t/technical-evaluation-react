@@ -1,24 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react'
 import './App.css';
 
-function App() {
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import TopBar from './components/TopBar';
+import ClownGallery from './components/ClownGallery';
+import * as CRUD from "./utils/CRUD";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      alignSelf: 'center',
+
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  }),
+);
+
+// For demo purposes, initialize storage with dummy data
+CRUD.setupStorageWithDummyClowns();
+
+const App: React.FC = () => {
+  const classes = useStyles();
+
+  let [creepyClownData, setCreepyClownData] = useState({ ...localStorage });
+
+  // Listen for custom event which is dispatched by CRUD, indicating localStorage
+  // has been modified, and this top level component should update state & pass down
+  document.createEvent('Event').initEvent('StorageUpdated', true, true);
+  window.addEventListener("StorageUpdated", () => setCreepyClownData({ ...localStorage }), false);
+
+  useEffect(() => {
+    document.title = "Clown Tracker";
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <TopBar />
+      <ClownGallery creepyClownData={creepyClownData} />
     </div>
   );
 }

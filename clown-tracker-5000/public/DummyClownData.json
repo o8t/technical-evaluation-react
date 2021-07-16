@@ -1,0 +1,30 @@
+[
+  {
+    "id": "5f3937b8-19b9-4d6e-9174-af17c2094f97",
+    "name": "Bim Bam",
+    "posse": "ICP",
+    "age": 34,
+    "image": ""
+  },
+  {
+    "id": "7602cf2c-efae-4c3f-be44-5006398a25d2",
+    "name": "Baggy Britches",
+    "posse": "Another Posse",
+    "age": 39,
+    "image": ""
+  },
+  {
+    "id": "e38885bd-59e6-4bbd-8c8c-e7562dcca37d",
+    "name": "Binky Blinky",
+    "posse": "Another Posse",
+    "age": 42,
+    "image": ""
+  },
+  {
+    "id": "51e40bc4-2c76-4b8e-8d5b-69bb02ee2f14",
+    "name": "Bimbo",
+    "posse": "ICP",
+    "age": 29,
+    "image": ""
+  }
+]
