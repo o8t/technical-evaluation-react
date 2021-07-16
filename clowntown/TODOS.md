@@ -6,8 +6,8 @@ x create/remove clowns through store
 x add clown home positions to map
 x make info pop up on map click
 x add list of existing clowns
-add 3d renders to map
-be able to add new clown
-clean up formatting/styling
+x add 3d renders to map
+x be able to add new clown
+x clean up formatting/styling
+x add more documentation
 add photo to clown
-add more documentation

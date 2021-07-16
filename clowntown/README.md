@@ -1,5 +1,7 @@
 #Welcome to the Appleville Clown Incident Tracking Dashboard!
 
+### ABOUT
+
 ## Create New Clown Color
 ```
 Go to the included .blend file (located in /src/blends) & simply change the material colors to whatever you desire, then render! 
@@ -13,6 +15,50 @@ Another future update could be to integrate webgl/webgpu into the project so tha
 ```
 Map: Click on a clown & you'll receive more info about the clown, including their names (both stage name & real name), license details, biographies, and other details. This is private personal clownformation regulated by strict clownfidentiality law, please dont spread it around.
 ```
+
+## Packages:
+```
+	Vue-Leaflet is included for a customizable map using vue bindings.
+
+	Vuex is included for ease of automatically reloading values upon state change without having to explicitly write extra logic  
+```
+
+##Schema:
+```
+ only fairly basic info implemented in frontend, included a models.py file that should be valid django ORM schema creation for the "final" product (havent tested it yet but its intended to meaningfully point towards a broader implementation)
+```
+
+##Not Included:
+```
+	object persistence past reload, ideally I'd do that in SQL & I dont think its rly worth my while to set up a REST server & sql interpreter, honestly bc Ive always done that through the backend instead of thru Node so I wouldnt know what packages to install. If this were implemented, I'd likely use axios on the frontend to talk to the background API
+
+	Authentication of any kind, again should be done on backend (so dont let the clowns find this!)
+	
+	super duper sleek UI design, I'm mostly a backend person who tries to get the front end a couple steps less ugly than purely functional, but not too many steps
+
+	not optimized for mobile
+```
+
+##Known Bugs:
+```
+	the clown images outline renders funky on the hair, clips behind head
+
+	size is much different in appleville, while you may think you're zooming in the world may be zooming out. how do you think so many clowns can fit in one car? (translation: would need to create a set of different sized tiles to fix zooming problem, and that just seems like superfluous effort)
+```
+
+##Future:
+```
+	convert to typescript
+
+	fully implement more complex API
+
+	be able to scan license of everyone in clown car (*everyone*)
+
+	make licenses look more like licenses & define grid location for attributes
+
+	connect licenses in list to licenses on map (ie clicking on map highlights the license of that clown & scrolls down to it)
+```
+### INSTALLATION/RUNNING
 
 ## Project setup
 ```
@@ -34,3 +80,5 @@ npm run build
 install a webserver (npm install -g serve works), point it at ./dist (serve -s dist will work)
 ```
 
+
+please forward my best regards to "the client" :)
