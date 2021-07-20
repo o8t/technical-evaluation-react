@@ -5,7 +5,7 @@ Set up the node js environment based on the OS.
 
 2.Installation
 
-Download the client side folder: ClownViewer and the nodejs server folder ClownPortal
+Download and unzip the client side folder: ClownViewer and the nodejs server folder ClownPortal
 To run the nodejs server, run the command npm “start” inside the folder ClownPortal
 To run the client page, run the command npm “start” inside the folder “ClownViewer” or double click the “LoginPage.html”file.
 
