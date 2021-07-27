@@ -60,11 +60,13 @@ function Register() {
       { state.error ? <div className="error">{state.error}</div> : null }
 
       <Input value={state.clownName} onChange={(event) => { setState({...state, clownName: event.target.value }) }} />
-      <FormLabel>Name</FormLabel>
+      <div><FormLabel>Name</FormLabel></div>
+
       <Input type="file" onChange={handleFile}></Input>
+      <div><FormLabel>Profile Picture</FormLabel></div>
       <div><img src={state.profilePicture} /></div>
 
-      <div><Button onClick={submit}>Register</Button></div>
+      <div><Button onClick={submit} variant="contained" color="primary">Register</Button></div>
     </div>
   )
 }

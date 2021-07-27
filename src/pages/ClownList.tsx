@@ -17,7 +17,7 @@ function ClownList() {
     <ul>
       {Object.keys(clowns).map((clownId) => {
         const clown = clowns[clownId];
-        return <li key={clown.id}><img src={clown.profilePicture} />{clown.name} <Button color='primary' onClick={() => deleteClown(clown.id) }>Delete</Button></li>
+        return <li key={clown.id}><img src={clown.profilePicture} />{clown.name} <Button variant="contained" color='secondary' onClick={() => deleteClown(clown.id) }>Delete</Button></li>
       })}
     </ul>
   );
