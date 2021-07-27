@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Switch, Route, Link, BrowserRouter } from 'react-router-dom';
+import Home from './pages/Home';
+import Register from './pages/Register';
+import ClownList from './pages/ClownList';
+import store from './store/store';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Provider store={store}>
+      <BrowserRouter>
+        <div>
+          <div className="header">
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+              <li>
+                <Link to="/list">Clown List</Link>
+              </li>
+            </ul>
+          </div>
+
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="/list">
+              <ClownList />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </Provider>
+);
 }
 
 export default App;
