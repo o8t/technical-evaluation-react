@@ -58,7 +58,22 @@ const PERSONALITY = {
     'dangerous': 10,
 };
 
+const COLOR = [
+    'red',
+    'green',
+    'purple',
+    'yellow'
+];
+
+const CLOTH = [
+    'traditional',
+    'freestyle',
+    'casual'
+];
+
 export {
     RANDOM_NAMES,
-    PERSONALITY
+    PERSONALITY,
+    COLOR,
+    CLOTH
 }

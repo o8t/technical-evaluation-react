@@ -33,19 +33,12 @@
 
       </v-col>
 
-      <v-col
-        class="mb-5"
-        cols="12">
-
-        <h1> He belongs to {{group}}. </h1>
-        <h1> He loves {{hobby}}. </h1>
-      </v-col>
-
       <v-col class="text-center mb-5">
         <v-pagination
-          v-model="page"
-          :length="length"
+          v-model="itemIndex"
+          :length="listLength"
           :total-visible="7"
+          @input="indexChange"
           >
 
         </v-pagination>
@@ -64,7 +57,15 @@
 const img = '../static/img/clowns.jpg';
 
 export default {
+
+  props: {
+    clownItem: Object,
+    listLength: Number,
+    index: Number,
+  },
+
   computed: {
+
     imgPath: {
       get() {
         return img;
@@ -73,51 +74,46 @@ export default {
 
     name: {
       get() {
-        return 'clown Name';
+        return this.clownItem.name;
       }  
     },
 
     color: {
       get() {
-        return 'red';
+        return this.clownItem.attributes.appearance.nose;
       }
     },
 
     hairColor: {
       get() {
-        return 'red';
+        return this.clownItem.attributes.appearance.hair;
       }
     },
 
     cloth: {
       get() {
-        return 'tradational';
+        return this.clownItem.attributes.appearance.cloth;
       }
     },
     
     personality: {
       get() {
-        return 'dangerous';
+        return this.clownItem.attributes.personality;
       }
     },
-
-    group: {
-      get() {
-        return 'circls';
-      }
-    },
-
-    hobby: {
-      get() {
-        return 'baseball';
-      }
-    }
   },
 
   data() {
     return {
-      length: 15,
-      page: 1,
+      itemIndex: this.index,
+      itemLength: this.listLength
+    }
+  },
+
+  methods: {
+    indexChange(value) {
+      this.itemIndex = value;
+      this.$emit('indexChanged', value-1);
     }
   }
 };

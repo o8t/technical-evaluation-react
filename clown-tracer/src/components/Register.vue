@@ -78,7 +78,20 @@
 
             <v-col cols="12">
               <h3>
-                Do you hate children: 
+                Would you please give us your pic: 
+              </h3>
+            </v-col>
+
+            <v-col cols="12" sm="3">
+              <v-file-input
+                accept="image/*"
+                label="image input"
+              ></v-file-input>
+            </v-col>
+
+            <v-col cols="12">
+              <h3>
+                Do you hate batman?
               </h3>
             </v-col>               
 
@@ -199,12 +212,13 @@ export default {
     resetForm() {
       this.form = Object.assign({}, this.defaultForm);
       this.$refs.form.reset();
+      this.$emit('registerCancel');
     },
     submit() {
       this.snackbar = true;
-        console.log('form is: ', this.form);
       registerClown(this.form);
       this.resetForm();
+      this.$emit('dataChanged');
     },
   },
 };

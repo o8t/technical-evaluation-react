@@ -38,10 +38,11 @@
       <v-main>
         <navigation-com v-if="!register"
           :navDrawer=drawer
+          :clownitems="clowns"
           @drawerChange=changed>
         </navigation-com> 
 
-        <register v-if="register">
+        <register v-if="register" @registerCancel=cancelled @dataChanged=dataChanged>
         </register>
       </v-main>
     </v-container>
@@ -51,6 +52,7 @@
 </template>
 
 <script>
+import { getClowns } from './api/clownInfo';
 
 
 import NavigationCom from './components/NavigationCom.vue';
@@ -65,23 +67,32 @@ export default {
   },
 
   data: () => ({
-    drawer: true,
-    register: true,
+    drawer: false,
+    register: false,
+    clowns: getClowns(),
   }),
 
   methods: {
     menuBtClick() {
       this.drawer = true;
+      this.register = false;
     },
 
     changed(value) {
       this.drawer = value;
-      console.log('drawer changed ');
     },
 
     clownRegister() {
-      console.log('go to register');
-    }
+      this.register = true;
+    },
+
+    cancelled() {
+      this.register = false;
+    },
+
+    dataChanged() {
+      this.clowns = getClowns();
+    },
   }
 };
 </script>

@@ -12,22 +12,31 @@
               v-model="value"
               :items="clownProps"
               chips
-              label="Filled"
+              label="Find the clown"
+              @change="changeFilters"
             >
             </v-autocomplete>
           </v-list-item>
           <v-list>
-            <v-list-item-group v-model="model">
-              <v-list-item v-for="(item, i) in clownitems" :key="i">
+            <v-list-item-group v-model="model" >
+              <v-list-item v-for="(item, i) in allItems" :key="i">
                 <v-list-item-icon> </v-list-item-icon>
-                <v-list-item-content v-text="item.name"> </v-list-item-content>
+                <v-list-item-content v-text="item.name" @click="itemClicked(i)"> </v-list-item-content>
               </v-list-item>
             </v-list-item-group>
           </v-list>
       </v-navigation-drawer>
 
       <v-container>
-        <card-gallery> </card-gallery>
+        <card-gallery 
+          v-if="!welcome" 
+          :clownItem="clownInfo" 
+          :index="itemIndex" 
+          :listLength="itemlength"
+          @indexChanged=itemClicked
+          > 
+        </card-gallery>
+        <welcome-com v-if="welcome"></welcome-com>
       </v-container>
       
   </v-container>
@@ -36,15 +45,19 @@
 
 <script>
 import CardGallery from "./CardGallery.vue";
-import { getClowns, getClownsProps } from "../api/clownInfo.js";
+import welcomeCom from './welcomeCom.vue';
+import { getClownsProps } from "../api/clownInfo.js";
+import { filterItems } from '../lib/util.js';
 
 export default {
   components: {
     CardGallery,
+    welcomeCom
   },
 
   props: {
     navDrawer: Boolean,
+    clownitems: Array,
   },
 
   computed: {
@@ -59,18 +72,9 @@ export default {
       }
     },
 
-    clownitems: {
-      get() {
-        const clowns = getClowns();
-        console.log("clowns is: ", clowns);
-        return clowns;
-      },
-    },
-
     clownProps: {
       get() {
         const res = getClownsProps();
-        console.log("clown pros is: ", res);
         return res;
       },
     },
@@ -80,10 +84,32 @@ export default {
     return {
       value: null,
       model: 1,
+      welcome: true,
+      clownInfo: null,
+      allItems: this.clownitems,
+      itemIndex: 0,
+      itemlength: this.clownitems.length,
     };
   },
 
   methods: {
+    itemClicked(idx) {
+      this.itemIndex = idx+1;
+      this.itemlength = this.allItems.length;
+      this.clownInfo = this.allItems[idx];
+      this.drawer = false;
+      this.welcome = false;
+    },
+
+    changeFilters(value) {
+      if (value) {
+        this.allItems = filterItems(this.clownitems, value);
+        this.itemlength = this.allItems.length;
+      } else {
+        this.allItems = this.clownitems;
+      }
+
+    }
   }
 };
 </script>
